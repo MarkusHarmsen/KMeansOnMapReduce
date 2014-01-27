@@ -1,0 +1,11 @@
+.metadata
+Data/
+KMeansTest/
+**/bin/
+**/input/
+**/cache/
+**/cache_pp/
+**/cache_costs/
+**/input_pp/
+**/output/
+**/.settings/
