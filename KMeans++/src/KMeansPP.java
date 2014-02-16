@@ -39,7 +39,7 @@ public class KMeansPP {
 		for (int i = 1; i < kClusters; i++) {
 			double distanceSum = computeCostsAndCacheDistance(fs, input, centers, cache, weighted);
 			centers.add(selectNextCenter(fs, cache, distanceSum, weighted));
-			System.out.println("Cluster selected: " + i);
+			//System.out.println("Cluster selected: " + i);
 		}
 
 		// Run "classic" K-Means

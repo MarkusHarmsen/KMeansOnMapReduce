@@ -95,7 +95,10 @@ public class KMeans__OnMapReduce {
 		// single machine)
 		Path cachePP = new Path("cache_pp");
 		KMeansResult result = KMeansPP.run(kClusters, inputPP, cachePP, true, false);
-		result.costs = ResultReaderHelper.computeCosts(fs, input, result.centers);
+		//result.costs = ResultReaderHelper.computeCosts(fs, input, result.centers);
+	
+		// Run classic K-Means
+		KMeansOnMapReduce.run(kClusters, input, output, result.centers);
 
 		return result;
 	}

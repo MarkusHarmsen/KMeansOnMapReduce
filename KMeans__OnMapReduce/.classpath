@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="/home/markus/Downloads/hadoop-1.2.1/lib/commons-io-2.1.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CommonKMeansOnMapReduce"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/KMeans++"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/KMeansOnMapReduce"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

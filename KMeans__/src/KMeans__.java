@@ -84,6 +84,10 @@ public class KMeans__ {
 		// Run K-Means++ on weighted clusters
 		Path cachePP = new Path("cache_pp");
 		KMeansResult result = KMeansPP.run(kClusters, inputPP, cachePP, USE_WEIGHTED, false);
+		//result.costs = ResultReaderHelper.computeCosts(fs, input, result.centers);
+		
+		// Run "classic" K-Means
+		result = KMeans.kMeans(result.centers, fs, input);
 		result.costs = ResultReaderHelper.computeCosts(fs, input, result.centers);
 
 		return result;

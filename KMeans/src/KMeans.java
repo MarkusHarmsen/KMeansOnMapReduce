@@ -45,6 +45,7 @@ public class KMeans {
 		while (!centers.equals(oldCenters)) {
 			oldCenters = new ArrayList<Point>(centers);
 			iterations++;
+			System.out.println("K-Means iteration: " + iterations);
 
 			// Use array instead of array list, otherwise the list must be
 			// initialized before

@@ -24,13 +24,22 @@ public class KMeansOnMapReduce {
 	public static KMeansResult run(int kClusters) throws IOException {
 		Path input = new Path("input");
 		Path output = new Path("output");
-
+		
+		// Prepare fs object for file manipulation
+		FileSystem fs = FileSystem.get(new Configuration());
+		
+		ArrayList<Point> centers = ResultReaderHelper.getInitialCenters(fs, input, kClusters);
+		
+		return run(kClusters, input, output, centers);
+	}
+	
+	public static KMeansResult run(int kClusters, Path input, Path output, ArrayList<Point> centers) throws IOException {
 		// Prepare fs object for file manipulation
 		FileSystem fs = FileSystem.get(new Configuration());
 
 		// Select initial k centers
 		ArrayList<Point> oldCenters = null;
-		ArrayList<Point> centers = ResultReaderHelper.getInitialCenters(fs, input, kClusters);
+		
 		int iterations = 0;
 
 		// Iteration loop: while centers change
